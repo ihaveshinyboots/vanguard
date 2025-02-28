@@ -39,6 +39,9 @@
 4. Download IntelliJ Community Edition https://www.jetbrains.com/idea/download/?section=mac
 5. Ensure that the project structure SDK level is Java 21
 6. Run TestApplication
+7. Download Postman https://www.postman.com/downloads/
+8. Import postman collection (postman/vanguard.postman_collection.json)
+9. For the post /import api, select the file from src/test/games_sales.csv or generate a new one with the generate_file.py
 
 # Limitations:
 
