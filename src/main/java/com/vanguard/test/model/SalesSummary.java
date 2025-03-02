@@ -1,5 +1,7 @@
 package com.vanguard.test.model;
 
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import com.vanguard.test.utils.MoneySerializer;
 import jakarta.persistence.*;
 import java.math.BigDecimal;
 import java.time.LocalDate;
@@ -27,12 +29,14 @@ public class SalesSummary {
   private Integer totalGamesSold;
 
   @Column(name = "total_sales")
+  @JsonSerialize(using = MoneySerializer.class)
   private BigDecimal totalSales;
 
   @Column(name = "game_no")
   private Byte gameNo;
 
   @Column(name = "total_sales_for_game")
+  @JsonSerialize(using = MoneySerializer.class)
   private BigDecimal totalSalesForGame;
 
   public SalesSummary(

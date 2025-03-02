@@ -1,7 +1,9 @@
 package com.vanguard.test.model;
 
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import com.opencsv.bean.CsvBindByName;
 import com.opencsv.bean.CsvDate;
+import com.vanguard.test.utils.MoneySerializer;
 import jakarta.persistence.*;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
@@ -35,6 +37,7 @@ public class GameRecord {
 
   @Column(name = "cost_price")
   @CsvBindByName(column = "cost_price")
+  @JsonSerialize(using = MoneySerializer.class)
   private BigDecimal costPrice;
 
   @Column(name = "tax")
@@ -43,6 +46,7 @@ public class GameRecord {
 
   @Column(name = "sale_price")
   @CsvBindByName(column = "sale_price")
+  @JsonSerialize(using = MoneySerializer.class)
   private BigDecimal salePrice;
 
   @Column(name = "date_of_sale")
